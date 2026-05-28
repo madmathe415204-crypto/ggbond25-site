@@ -15,6 +15,7 @@ import {MeshLineGeometry, MeshLineMaterial} from 'meshline';
 import * as THREE from 'three';
 import cardGLB from './lanyard/card.glb?url';
 import lanyardTexture from './lanyard/lanyard.png';
+import {assetPath} from '../assetPaths';
 import {profile} from '../data/siteContent';
 import './lanyard/Lanyard.css';
 
@@ -193,7 +194,7 @@ function Band({isMobile, isUnlocked, onUnlock, onDragChange, onPullProgressChang
     nextTexture.needsUpdate = true;
     return nextTexture;
   }, [rawTexture]);
-  const avatarTexture = useTexture('/assets/images/pixel-avatar.jpg');
+  const avatarTexture = useTexture(assetPath('assets/images/pixel-avatar.jpg'));
   const curve = useMemo(
     () => {
       const nextCurve = new THREE.CatmullRomCurve3([

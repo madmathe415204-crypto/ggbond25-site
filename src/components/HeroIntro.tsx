@@ -1,5 +1,6 @@
 import type {CSSProperties} from 'react';
 import {useState} from 'react';
+import {assetPath} from '../assetPaths';
 import {profile} from '../data/siteContent';
 import {AnimatedLabel} from './AnimatedLabel';
 import {LanyardScene} from './LanyardScene';
@@ -13,11 +14,13 @@ export function HeroIntro({isUnlocked, onUnlock}: HeroIntroProps) {
   const [isDragging, setIsDragging] = useState(false);
   const [lanyardPullProgress, setLanyardPullProgress] = useState(0);
   const pullProgress = isUnlocked ? 1 : Math.max(isDragging ? 0.32 : 0.08, lanyardPullProgress);
+  const avatarPoster = assetPath('assets/images/pixel-avatar.jpg');
+  const introVideo = assetPath('assets/videos/ggbond25-intro.mp4');
 
   return (
     <section className={`hero-intro pixel-grid scanline ${isUnlocked ? 'is-unlocked' : ''}`} aria-labelledby="hero-title">
-      <video className="hero-video" autoPlay muted loop playsInline poster="/assets/images/pixel-avatar.jpg">
-        <source src="/assets/videos/ggbond25-intro.mp4" type="video/mp4" />
+      <video className="hero-video" autoPlay muted loop playsInline poster={avatarPoster}>
+        <source src={introVideo} type="video/mp4" />
       </video>
       <div className="hero-shade" />
       <div className="hero-content">

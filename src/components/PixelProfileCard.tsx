@@ -1,3 +1,4 @@
+import {assetPath} from '../assetPaths';
 import {profile} from '../data/siteContent';
 import {AnimatedLabel} from './AnimatedLabel';
 import {InteractivePanel} from './InteractivePanel';
@@ -12,7 +13,7 @@ export function PixelProfileCard() {
       <InteractivePanel className="profile-card hanging-profile-card">
         <div className="profile-lanyard" aria-hidden="true" />
         <div className="profile-avatar-frame">
-          <img src="/assets/images/pixel-avatar.jpg" alt="GGBOND-25 avatar" />
+          <img src={assetPath('assets/images/pixel-avatar.jpg')} alt="GGBOND-25 avatar" />
         </div>
         <div className="profile-copy">
           <p className="eyebrow">MAIN ID</p>

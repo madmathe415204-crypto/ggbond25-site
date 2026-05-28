@@ -1,8 +1,9 @@
 import {useEffect, useRef} from 'react';
+import {assetPath} from '../assetPaths';
 import {CyberParticles} from './CyberParticles';
 import {PixelTrail} from './PixelTrail';
 
-const scrollVideoSrc = '/assets/videos/ggbond25-scroll-background-scrub.mp4';
+const scrollVideoSrc = assetPath('assets/videos/ggbond25-scroll-background-scrub.mp4');
 
 export function CursorField() {
   const fieldRef = useRef<HTMLDivElement>(null);
