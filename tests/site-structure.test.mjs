@@ -1,7 +1,8 @@
 import {existsSync, readFileSync, statSync} from 'node:fs';
-import {join} from 'node:path';
+import {dirname, join} from 'node:path';
+import {fileURLToPath} from 'node:url';
 
-const root = 'C:/Users/19090/Documents/Codex/2026-05-25/hello/ggbond25-site';
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 function assert(condition, message) {
   if (!condition) {
